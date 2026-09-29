@@ -10,7 +10,7 @@ What's left to do here is to understand everything about how Claude could do thi
 
 My AI skepticism appears to have been misplaced. Also, my attempt to manually learn from the FreeRTOS site itself was more difficult and confusing than this! What a cheatsheet...
 
-
+A good followup project would be to redo a new project, myself, from scratch, without Claude, but using this project as a guide to steal from as needed. I'd end up with a more concise version while understanding how and why all the little pieces fit together, and excluding the ones I don't need.
 
 === Below is Claude' README for the project ===
 
