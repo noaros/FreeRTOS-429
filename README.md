@@ -12,6 +12,10 @@ My AI skepticism appears to have been misplaced. Also, my attempt to manually le
 
 A good followup project would be to redo a new project, myself, from scratch, without Claude, but using this project as a guide to steal from as needed. I'd end up with a more concise version while understanding how and why all the little pieces fit together, and excluding the ones I don't need.
 
+...
+
+So I asked Claude to trace over the code and explain every line, and it was exceedingly helpful! I'm finding it every bit as useful as a teacher as a code generator. I learned much more than from just reviewing the code, plus Claude found a race condition in its own code! Two RTOS tasks wrote the same register in a way that looked atomic but was not. Claude explained and implemented the fix, which was to stop writing the the whole ODR register for the port but instead use BSRR.
+
 === Below is Claude' README for the project ===
 
 Minimal FreeRTOS demo for the **NUCLEO-F429ZI** (STM32F429ZI, Cortex-M4F).
