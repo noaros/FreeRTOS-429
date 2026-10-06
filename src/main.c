@@ -59,7 +59,12 @@ static void gpio_init(void)
 }
 
 static void led_on(int pin)     { GPIOB->BSRR = 1u << pin; }
-static void led_toggle(int pin) { GPIOB->ODR ^= 1u << pin; }
+/* BSRR touches only this pin, so a preempting task's write to another pin isn't undone */
+static void led_toggle(int pin)
+{
+    uint32_t bit = 1u << pin;
+    GPIOB->BSRR = (GPIOB->ODR & bit) ? bit << 16 : bit;
+}
 
 static void uart_init(void)
 {
